@@ -4,7 +4,7 @@ var timekeeper = document.querySelector("nav");
 var startbutton = document.querySelector('#button');
 var question = [""];
 var answers = [""];
-var timeLeft = 85;
+var timeLeft = 78;
 
 
 // button
@@ -13,13 +13,27 @@ startbutton.addEventListener("click", quizstart);
 
 // runs the quiz
 function quizstart() {
+    countdown();
     // add timer start function
     // add question function
     // add game end
     
+    
 }
 
 // timer function
+function countdown(){
+    var timeInterval = setInterval(function () {
+        if (timeLeft >1) {
+            timekeeper.textContent = timeLeft + ' seconds remaining';
+            timeLeft --;
+        } else {
+            timekeeper.textContent = 'GAME OVER';
+            clearInterval(timeInterval);
+            window.alert("GAME OVER");
+        }
+    },1000);
+}
     //xx amount of time
     //subtract 5 seconds for wrong answers
     //end of timer and quiz alert
