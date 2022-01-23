@@ -8,7 +8,6 @@ const answerButtonElement = document.getElementById('answerButton');
 const highScore = document.getElementById('userScore');
 var initials = document.getElementById('initials');
 const submit = document.getElementById('submit');
-
 let timeInterval;
 let shuffledQuestions, currentQuestionIndex;
 let score = document.getElementById('score');
@@ -146,11 +145,24 @@ const questions = [
          
 ]
 function endGame() {
-    console.log ('end');
+    console.log (timeLeft+1);
     clearInterval(timeInterval);
-    score.textContent = "Your score is " + timeInterval + "!";
+    score.textContent = "Your score is " + (timeLeft+1) + "!";
     questionContainerElement.classList.add('hide');
     highScore.classList.remove('hide');
-    localStorage.setItem('Score',JSON.stringify(timeInterval));
+
 }
 
+submit.addEventListener('click', function(event) {
+    event.preventDefault();
+    var highScore = {
+        timeleft: (timeLeft+1).value,
+        initials: initials.value.trim()
+    };
+    localStorage.setItem('highScore',JSON.stringify(highScore));
+    saveScore();
+
+});
+function saveScore() {
+    score.textContent = "Your score has been saved!";
+}
