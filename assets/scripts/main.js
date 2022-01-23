@@ -1,13 +1,17 @@
 // vars for main Document Object Model or DOM elements
 var timekeeper = document.getElementById('timekeeper');
 const startButton = document.getElementById('startButton');
-var timeLeft = 18;
+var timeLeft = 10;
 const questionContainerElement = document.getElementById ('questionBox');
 const questionElement = document.getElementById('question');
 const answerButtonElement = document.getElementById('answerButton');
+const highScore = document.getElementById('userScore');
+var initials = document.getElementById('initials');
+const submit = document.getElementById('submit');
 
 let timeInterval;
 let shuffledQuestions, currentQuestionIndex;
+let score = document.getElementById('score');
 
 // button
 startButton.addEventListener('click', quizstart); 
@@ -140,9 +144,13 @@ const questions = [
         ]
     }
          
-    
 ]
 function endGame() {
     console.log ('end');
     clearInterval(timeInterval);
+    score.textContent = "Your score is " + timeInterval + "!";
+    questionContainerElement.classList.add('hide');
+    highScore.classList.remove('hide');
+    localStorage.setItem('Score',JSON.stringify(timeInterval));
 }
+
