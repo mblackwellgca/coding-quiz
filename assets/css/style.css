@@ -81,7 +81,7 @@ main.wrong {
 }
 
 .btn:hover {
-    border-color: black;
+    background-color: blanchedalmond;
 }
 
 .btn.correct {
@@ -91,7 +91,7 @@ main.wrong {
 .btn.wrong {
     --hue: var(--hue-wrong);
 }
-#startbutton, #nextbutton {
+#startbutton {
     font-size: 1.5rem;
     font-weight: bold;
     padding: 10px 20px;
@@ -104,6 +104,6 @@ main.wrong {
 
 }
 
-/*.hide {
+.hide {
     display: none;
 }
