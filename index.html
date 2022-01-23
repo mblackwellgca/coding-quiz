@@ -19,15 +19,25 @@
     </header>
 
     <main>
-        <section id = "quizbox">
-            <p id = "question">Coming Soon</p>
-            <p id = "answers">Coming Soon</p>
-
-        </section>
-
-        <button id = "button">Start</button>
+        <div id ="quizbox">
+            <section id = "questionbox" class="hide">
+                <div id = "question">Coming Soon</div>
+                <div id = "answer" class ="btn-grd"></div>
+                    <button class="btn">Answer 1</button>
+                    <button class="btn">Answer 2</button>
+                    <button class="btn">Answer 3</button>
+                    <button class="btn">Answer 4</button>
+            </section>
+            <section class = "controls">
+                <button id = "startbutton" class="btn">Start</button>
+                <button id = "nextbutton" class ="next-btn btn hide"> Next</button>
+            </section>   
+        </div>
 
     </main>
+
+        
+
 
     <script src="./assets/scripts/main.js"></script>
     <script src="./assets/scripts/questions.js"></script>
