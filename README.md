@@ -2,8 +2,8 @@
 A timed quiz on JavaScript fundamentals that stores high scores.
 
 ## Live Links
-* Published: 
-* Repository:
+* Published: https://mblackwellgca.github.io/coding-quiz/ 
+* Repository: https://github.com/mblackwellgca/coding-quiz 
 
 ## Description
 A typical coding assessment includes both multiple-choice questions and interactive coding challenges. 
@@ -22,9 +22,6 @@ GIVEN I am taking a code quiz
 * WHEN the game is over
     * THEN I can save my initials and my score
 
-## Features
-If your project has a lot of features, list them here.
-
 
 ## Usage
 The following animation demonstrates the application functionality:
@@ -34,8 +31,8 @@ The following animation demonstrates the application functionality:
 ## Credits:
 * Sandra Smith
 * Christopher Ponzio https://github.com/ChristopherPonzio
-* 
-* 
+* Web Dev Simplified https://www.youtube.com/channel/UCFbNIlppjAuEX4znoulh0Cw
+* Ask BCS Learning Assistant amandacrawfordcodes
 * 
 
 ## License
