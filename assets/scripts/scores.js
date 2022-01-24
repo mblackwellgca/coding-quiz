@@ -1,9 +1,9 @@
 var scores = document.getElementById('scores');
 
-function savehighScore() {
-  var highScore = JSON.parse(localStorage,getItem('highScore'));
+function saveHighScore() {
+  var initials = JSON.parse(localStorage.getItem('initials'));
     const scoresList = document.createElement('li');
-    scoresList.innerText = highScore.initials + " - " + highScore.timeLeft;
+    scoresList.innerText = initials.initials + "- Scored " + initials.score;
     scores.appendChild(scoresList);
 }
-savehighScore();
+saveHighScore();

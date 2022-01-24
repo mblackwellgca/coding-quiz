@@ -92,6 +92,8 @@ function setStatusClass(element, correct) {
         element.classList.add('correct');
     } else {
     element.classList.add('wrong');
+    timeLeft --;
+    timekeeper.textContent = timeLeft;
     }
 }
 
@@ -147,7 +149,7 @@ const questions = [
 function endGame() {
     console.log (timeLeft+1);
     clearInterval(timeInterval);
-    score.textContent = "Your score is " + (timeLeft+1) + "!";
+    score.textContent = "Your score is " + (timeLeft) + "!";
     questionContainerElement.classList.add('hide');
     highScore.classList.remove('hide');
 
@@ -156,10 +158,10 @@ function endGame() {
 submit.addEventListener('click', function(event) {
     event.preventDefault();
     var highScore = {
-        timeleft: (timeLeft+1).value,
-        initials: initials.value.trim()
+        initials: initials.value.trim(),
+        score: timeLeft
     };
-    localStorage.setItem('highScore',JSON.stringify(highScore));
+    localStorage.setItem('initials',JSON.stringify(highScore));
     saveScore();
 
 });
