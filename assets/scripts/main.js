@@ -1,7 +1,7 @@
 // vars for main Document Object Model or DOM elements
 var timekeeper = document.getElementById('timekeeper');
 const startButton = document.getElementById('startButton');
-var timeLeft = 10;
+var timeLeft = 100;
 const questionContainerElement = document.getElementById ('questionBox');
 const questionElement = document.getElementById('question');
 const answerButtonElement = document.getElementById('answerButton');
@@ -42,13 +42,13 @@ function countdown() {
         }
     }, 1000);
 }
-
+// added coding to shuffle questions when retaking quiz
 function setNextQuestion() {
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex]);
-
 }
 
+//question button function
 function showQuestion(question) {
     questionElement.innerText=question.question;
     question.answers.forEach(answer => {
@@ -63,13 +63,14 @@ function showQuestion(question) {
     })
 }
 
+//coding to reset
 function resetState() {
     while (answerButtonElement.firstChild) {
         answerButtonElement.removeChild
         (answerButtonElement.firstChild);
     }
 }
-
+//when the answer is selected 
 function selectAnswer(e) {
     const selectedButton = e.target;
     const correct = selectedButton.dataset.correct;
@@ -84,8 +85,7 @@ function selectAnswer(e) {
         endGame()
     }
 }
-
-
+//adding the correct and incorrect function
 function setStatusClass(element, correct) {
     clearStatusClass(element);
     if (correct) {
@@ -101,7 +101,7 @@ function clearStatusClass(element) {
     element.classList.remove('correct');
     element.classList.remove('wrong');
 }
-
+//quiz questions
 const questions = [
     {
         question: 'Arrays in Javascript can be used to store __.',
@@ -146,13 +146,13 @@ const questions = [
     }
          
 ]
+//to end the game
 function endGame() {
     console.log (timeLeft+1);
     clearInterval(timeInterval);
     score.textContent = "Your score is " + (timeLeft) + "!";
     questionContainerElement.classList.add('hide');
     highScore.classList.remove('hide');
-
 }
 
 submit.addEventListener('click', function(event) {
