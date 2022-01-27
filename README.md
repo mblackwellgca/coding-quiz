@@ -26,7 +26,7 @@ GIVEN I am taking a code quiz
 ## Usage
 The following animation demonstrates the application functionality:
 
-![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./assets/images/api-quiz.gif)
+![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./assets/images/api_quiz.gif)
 
 ## Credits:
 * Sandra Smith
